@@ -1,0 +1,19 @@
+name: Install Library
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  install:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+    - name: Install Library
+      run: pip install pyimgbbnew
